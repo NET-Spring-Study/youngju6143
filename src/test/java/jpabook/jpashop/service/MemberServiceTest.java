@@ -35,7 +35,7 @@ public class MemberServiceTest {
         em.flush(); // insert문 호출 확인 가능
         assertEquals(member, memberRepository.findOne(savedId));
     }
-    @Test // expected 지원 X
+    @Test // expected 지원 X -> assertThrow 통해 따로 예외 처리 필요
     public void 중복_회원_예외() throws Exception {
         //given
         Member member1 = new Member();
@@ -52,7 +52,7 @@ public class MemberServiceTest {
         }); // 예외 발생해야함
 
         //then
-        fail("예외가 발생해야 한다.");
+//        fail("예외가 발생해야 한다.");
 
     }
 
