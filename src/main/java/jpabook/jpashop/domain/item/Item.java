@@ -41,7 +41,7 @@ public abstract class Item {
     public void removeStock(int quantity) {
         int restStock = stockQuantity - quantity;
         if (restStock < 0) {
-            throw new NotEnoughStockException();
+            throw new NotEnoughStockException("재고가 모자랍니다");
         }
         stockQuantity = restStock;
     }
