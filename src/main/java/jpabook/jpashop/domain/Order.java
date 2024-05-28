@@ -30,7 +30,7 @@ public class Order {
     // Cascade : persist 전파,
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = LAZY)
+    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     // 일대일 관계에서 연관관계 주인은 foreign key와 가까운 곳에 있는 애로 지정
     private Delivery delivery;
